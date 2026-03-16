@@ -1,3 +1,4 @@
+import { Suspense } from 'react';
 import { TemplateGallery } from '@/components/app/TemplateGallery';
 import type { Metadata } from 'next';
 
@@ -7,5 +8,9 @@ export const metadata: Metadata = {
 };
 
 export default function TemplatesPage() {
-  return <TemplateGallery />;
+  return (
+    <Suspense fallback={null}>
+      <TemplateGallery />
+    </Suspense>
+  );
 }
